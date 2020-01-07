@@ -1,8 +1,8 @@
 const morgan = require('morgan');
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
+
 app.use(morgan('common'));
 
 const playstore = require('./playstore-data.js');
@@ -52,6 +52,4 @@ app.get('/apps', (req, res) =>{
     res.json(results);
 });
 
-app.listen(8000, ()=>{
-    console.log('Sercer Started on PORT 8000')
-})
+module.exports = app;
